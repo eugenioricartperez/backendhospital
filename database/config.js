@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const dbConnection = async() => {
    try {
        
-       await mongoose.connect('mongodb+srv://eugenio:gyk0nD9YJksIvfn3@cluster0.vzzz5.mongodb.net/hospital', {
+       await mongoose.connect(process.env.DB_CNN, {
              useNewUrlParser: true,
              useUnifiedTopology: true,
              useCreateIndex: true
@@ -12,7 +12,7 @@ const dbConnection = async() => {
             console.log('DB Online');
    } catch (error) {
        console.log(error);
-       throw new Error('Error a la hora de conectra en la base de datos ');
+       throw new Error('Error a la hora de conectar en la base de datos ');
    }
 
 
